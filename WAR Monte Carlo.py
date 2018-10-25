@@ -32,7 +32,7 @@ for i in range (10000000):
         YearCount+=1
     AgeFinal=AgeCount+TenorYears
     AgePenalty = (max(AgeFinal,29)-max(AgeCount,29))*.5
-    NoOptionSum+=(WARCount-AgePenalty/2)*WinCost*TenorYears
+    NoOptionSum+=max(0,(WARCount-AgePenalty/2)*WinCost*TenorYears)
     OptionSum+=max((WARCount-AgePenalty/2)*WinCost*TenorYears,OptionValue*TenorYears)
 
 NetCost=OptionSum-NoOptionSum
